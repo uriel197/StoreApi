@@ -3,12 +3,13 @@ require('express-async-errors');
 
 const express = require('express');
 const app = express();
-const notFoundMiddleware = require('./middleware/not-found');
-const errorMiddleware = require('./middleware/error-handler');
 const connectDB = require('./connectDB/connect');
 const productsRouter = require('./routes/products');
 
+const notFoundMiddleware = require('./middleware/not-found');
+const errorMiddleware = require('./middleware/error-handler');
 
+// Routes
 app.get('/', (req, res) => {
     res.send('<h1>Welcome to our main page</h1><a href="/api/v1/products">Products</a>');
 });
